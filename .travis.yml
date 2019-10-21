@@ -17,6 +17,7 @@ before_install:
   - pyenv install --list
   - pyenv versions
 install:
+  - pyenv local ${PYTHON_VERSION}
   # - pyenv global ${PYTHON_VERSION}
-  - pyenv install -v ${PYTHON_VERSION}
+  # - pyenv install -v ${PYTHON_VERSION}  
 script: python --version
