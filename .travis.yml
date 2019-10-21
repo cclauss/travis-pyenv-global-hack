@@ -17,10 +17,17 @@ env:
   - PYTHON_VERSION="3.8.0"
 matrix:
   include:
-    - addons:
+    - env: PYTHON_VERSION="3.8"
+      addons:
         apt:
           sources: deadsnakes
           packages: python3.8
+      before_install:
+        - python --version
+        - pip --version || true
+      install:
+        - pip install flake8
+        - flake8 --version
 before_install:
   - pyenv install --list
   - pyenv versions
