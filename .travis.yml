@@ -1,48 +1,12 @@
-language: cpp
-#env:
-#  - PYTHON_VERSION="2.7"
-#  - PYTHON_VERSION="2.7.14"
-#  - PYTHON_VERSION="2.7.15"
-#  - PYTHON_VERSION="2.7.16"
-#  - PYTHON_VERSION="2.7.17"
-#  - PYTHON_VERSION="3.6"
-#  - PYTHON_VERSION="3.6.7"
-#  - PYTHON_VERSION="3.7"
-#  - PYTHON_VERSION="3.7.1"
-#  - PYTHON_VERSION="3.7.2"
-#  - PYTHON_VERSION="3.7.3"
-#  - PYTHON_VERSION="3.7.4"
-#  - PYTHON_VERSION="3.7.5"
-#  - PYTHON_VERSION="3.8"
-#  - PYTHON_VERSION="3.8.0"
-matrix:
-  include:
-    - env: PYTHON_VERSION="3.8"
-      addons:
-        apt:
-          sources: deadsnakes
-          packages: python3.8
-      before_install:
-        - python --version
-        - python3 --version
-        - python3.8 --version
-        - pip3 --version || true
-        #- pwd ; ls -R ; ls .travis ; ls .travis/helpers.sh
-        - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-        - sudo python3.8 get-pip.py
-        - sudo curl https://bootstrap.pypa.io/get-pip.py | python3.8
-        - python --version
-        - pip --version || true
-      install:
-        - pip install flake8
-        - flake8 --version
+language: cpp  # not python!!
+addons:
+  apt:
+    sources: deadsnakes
+    packages: python3.8
 before_install:
-  - pyenv install --list
-  - pyenv versions
-install:
-  - echo ${PYTHON_VERSION} > .python-version
-  - cat .python-version
-  - pyenv local ${PYTHON_VERSION}
-  # - pyenv global ${PYTHON_VERSION}
-  # - pyenv install -v ${PYTHON_VERSION}  
-script: python --version
+  - python3.8 --version  # Python 3.8.0
+  - sudo curl https://bootstrap.pypa.io/get-pip.py | python3.8
+  # ModuleNotFoundError: No module named 'distutils.util'
+  - python3.8 -m pip --version || true
+install: true
+script: true
