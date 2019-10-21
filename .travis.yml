@@ -1,20 +1,20 @@
 language: cpp
-env:
-  - PYTHON_VERSION="2.7"
-  - PYTHON_VERSION="2.7.14"
-  - PYTHON_VERSION="2.7.15"
-  - PYTHON_VERSION="2.7.16"
-  - PYTHON_VERSION="2.7.17"
-  - PYTHON_VERSION="3.6"
-  - PYTHON_VERSION="3.6.7"
-  - PYTHON_VERSION="3.7"
-  - PYTHON_VERSION="3.7.1"
-  - PYTHON_VERSION="3.7.2"
-  - PYTHON_VERSION="3.7.3"
-  - PYTHON_VERSION="3.7.4"
-  - PYTHON_VERSION="3.7.5"
-  - PYTHON_VERSION="3.8"
-  - PYTHON_VERSION="3.8.0"
+#env:
+#  - PYTHON_VERSION="2.7"
+#  - PYTHON_VERSION="2.7.14"
+#  - PYTHON_VERSION="2.7.15"
+#  - PYTHON_VERSION="2.7.16"
+#  - PYTHON_VERSION="2.7.17"
+#  - PYTHON_VERSION="3.6"
+#  - PYTHON_VERSION="3.6.7"
+#  - PYTHON_VERSION="3.7"
+#  - PYTHON_VERSION="3.7.1"
+#  - PYTHON_VERSION="3.7.2"
+#  - PYTHON_VERSION="3.7.3"
+#  - PYTHON_VERSION="3.7.4"
+#  - PYTHON_VERSION="3.7.5"
+#  - PYTHON_VERSION="3.8"
+#  - PYTHON_VERSION="3.8.0"
 matrix:
   include:
     - env: PYTHON_VERSION="3.8"
@@ -25,6 +25,7 @@ matrix:
             - python3.8
             - python3-pip
       before_install:
+        - pwd ; ls -R
         - python --version
         - pip --version || true
       install:
