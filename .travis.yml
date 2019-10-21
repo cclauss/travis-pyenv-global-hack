@@ -25,7 +25,9 @@ matrix:
             - python3.8
       before_install:
         - pwd ; ls -R ; ls .travis ; ls .travis/helpers.sh
-        - curl https://bootstrap.pypa.io/get-pip.py | python3.8
+        - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+        # - sudo python3.8 get-pip.py
+        - sudo curl https://bootstrap.pypa.io/get-pip.py | python3.8
         - python --version
         - pip --version || true
       install:
