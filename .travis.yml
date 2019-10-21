@@ -13,6 +13,10 @@ env:
   - PYTHON_VERSION="3.7.5"
   - PYTHON_VERSION="3.8"
   - PYTHON_VERSION="3.8.0"
-before_install: pyenv install --list
-install: pyenv global ${PYTHON_VERSION}
+before_install:
+  - pyenv install --list
+  - pyenv versions
+install:
+  # - pyenv global ${PYTHON_VERSION}
+  - pyenv install -v ${PYTHON_VERSION}
 script: python --version
