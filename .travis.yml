@@ -6,6 +6,9 @@ addons:
       - python3.8
       - python3-distutils
 before_install:
+  - pyenv version
+  - pyenv install --list
+  - pyenv versions || true
   - python3.8 --version  # Python 3.8.0
   - sudo curl https://bootstrap.pypa.io/get-pip.py | python3.8
   - python3.8 -m pip --version || true
