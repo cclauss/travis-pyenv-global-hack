@@ -11,9 +11,20 @@ jobs:
     - before_install: pyenv global 3.7.5
     - before_install: pyenv global 3.8.0
     - os: osx
-      before_install: pyenv install --list ; pyenv install 3.8.0 ; python --version ; pyenv global 3.8.0
+      before_install:
+        - pyenv install --list
+        - pyenv install 3.8.0
+        - pyenv global  3.8.0
+        - python3 --version ; python3 -m pip --version || true
+        - python  --version ; python  -m pip --version || true
     - os: osx
-      before_install: pyenv install --list ; pyenv install 2.7.17 ; python --version ; pyenv global 2.7.17
+         - pyenv install --list
+        - pyenv install 2.7.17
+        - pyenv global  2.7.17
+        - python2 --version ; python2 -m pip --version || true
+        - python  --version ; python  -m pip --version || true
+        - ls -Fla .vendor || true
+        - ls -Fla vendor  || true
     - addons:
         apt:
           update: true
