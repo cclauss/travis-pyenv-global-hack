@@ -1,13 +1,13 @@
 language: cpp  # not python!!
-matrix:
+jobs:
   include:
     - before_install: pyenv global 3.7.1
     - before_install: pyenv global 3.7.4
     - before_install: pyenv global 3.7.5
     - before_install: pyenv global 3.8.0
-    - os:osx
+    - os: osx
       before_install: pyenv global 3.8.0
-    - os:osx
+    - os: osx
       before_install: pyenv global 2.7.17
     - addons:
         apt:
