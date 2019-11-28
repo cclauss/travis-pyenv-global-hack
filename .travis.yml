@@ -6,9 +6,9 @@ jobs:
     - before_install: pyenv global 3.7.5
     - before_install: pyenv global 3.8.0
     - os: osx
-      before_install: pyenv global 3.8.0
+      before_install: pyenv install --list ; pyenv install 3.8.0 ; python --version ; pyenv global 3.8.0
     - os: osx
-      before_install: pyenv global 2.7.17
+      before_install: pyenv install --list ; pyenv install 2.7.17 ; python --version ; pyenv global 2.7.17
     - addons:
         apt:
           update: true
