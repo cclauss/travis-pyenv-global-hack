@@ -1,4 +1,9 @@
 language: cpp  # not python!!
+addons:
+  homebrew:
+    update: true
+    packages:
+    - pyenv
 jobs:
   include:
     - before_install: pyenv global 3.7.1
